@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registreeri</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Registreeri</h1>
+    <form method="post" onsubmit="return validateForm()">
+        <label for="username">Kasutajanimi:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Parool:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm_password">Korda parooli:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+
+        <label for="languages">Vali keeled, milles sa suhtled:</label>
+        <select id="languages" name="languages[]" multiple>
+            <option value="english">Inglise</option>
+            <option value="estonian">Eesti</option>
+            <option value="spanish">Hispaania</option>
+            <option value="french">Prantsuse</option>
+            <option value="german">Saksa</option>
+        </select>
+
+        <fieldset>
+            <legend>Programmeerimiskeelte oskused</legend>
+
+            <label for="python_skill">
+                <img src="{{ url_for('static', filename='icons/python.png') }}" class="icon"> Python:
+            </label>
+            <select id="python_skill" name="python_skill">
+                <option value="none">Puudub</option>
+                <option value="beginner">Algaja</option>
+                <option value="intermediate">Keskmine</option>
+                <option value="advanced">Edasijõudnud</option>
+            </select>
+
+            <!-- Lisa rohkem programmeerimiskeeli vajadusel -->
+
+        </fieldset>
+
+        <label for="region">Vali regioon:</label>
+        <select id="region" name="region">
+            <option value="north_america">Põhja-Ameerika</option>
+            <option value="europe">Euroopa</option>
+            <option value="asia">Aasia</option>
+            <option value="south_america">Lõuna-Ameerika</option>
+            <option value="africa">Aafrika</option>
+            <option value="australia">Austraalia</option>
+        </select>
+
+        <button type="submit">Registreeri</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm_password").value;
+            if (password !== confirmPassword) {
+                alert("Paroolid ei kattu. Palun sisesta uuesti.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
