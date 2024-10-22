@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-Mentor</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">IT-Mentor</a>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Mentorid</a></li>
+                <li><a href="#">Programmeerimis Keeled</a></li>
+                <li><a href="#">Õppematerjalid</a></li>
+                <li><a href="#"><img src="/static/icons/search-icon.png" alt="Search">
+</a></li>
+                <li><button class="btn" id="registerBtn">Registreeri</button></li>
+                <li><button class="btn" id="loginBtn">Logi sisse</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="welcome-box">
+            <h1>Tere tulemast IT-Mentor platvormile!</h1>
+            <p>IT-Mentor on professionaalne platvorm, mis ühendab IT spetsialiste ja teadmishimulisi õppureid. Meie eesmärk on pakkuda parimat juhendamist ja toetust erinevates programmeerimiskeeltes. Olgu sul eesmärgiks alustada oma karjääri IT-s või arendada olemasolevaid oskusi, IT-Mentor on siin, et aidata. Registreeru, otsi mentorit ja astu oma karjääri järgmisele tasemele!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 IT-Mentor. Kõik õigused kaitstud.</p>
+    </footer>
+
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close" id="registerClose">&times;</span>
+            <h2>Registreeri</h2>
+            <form>
+                <label for="username">Kasutajanimi:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Parool:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="confirm-password">Kinnita parool:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <label for="email">E-post:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="programming-languages">Programmeerimiskeeled:</label>
+                <select id="programming-languages" name="programming-languages" multiple>
+                    <!-- Lisatud 20 populaarset keelt -->
+                </select>
+                <button type="submit" class="btn">Registreeri</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close" id="loginClose">&times;</span>
+            <h2>Logi sisse</h2>
+            <form>
+                <label for="login-username">Kasutajanimi:</label>
+                <input type="text" id="login-username" name="login-username" required>
+                <label for="login-password">Parool:</label>
+                <input type="password" id="login-password" name="login-password" required>
+                <button type="submit" class="btn">Logi sisse</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</body>
+</html>
